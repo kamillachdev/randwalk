@@ -9,6 +9,19 @@ using std::cout;
 
 namespace VECTOR
 {
+	double mag;
+	double ang;
+
+	double Vector::magreturn()
+	{
+		return mag;
+	}
+
+	double Vector::angreturn()
+	{
+		return ang;
+	}
+
 	const double Rad_to_deg = 45.0 / atan(1.0);
 
 	void Vector::set_mag()
@@ -139,7 +152,7 @@ namespace VECTOR
 		if (v.mode == Vector::RECT)
 			os << "(x,y) = (" << v.x << ", " << v.y << ")";
 		else if (v.mode == Vector::POL)
-			os << "(m,a) = (" << v.mag << ", " << v.ang * Rad_to_deg << ")";
+			os << "(m,a) = (" << mag << ", " << ang * Rad_to_deg << ")";
 		else
 			os << "Incorrect vector object representation mode";
 		return os;

@@ -9,8 +9,6 @@ namespace VECTOR
 	private:
 		double x;
 		double y;
-		double mag;
-		double ang;
 
 		Mode mode;
 
@@ -18,6 +16,8 @@ namespace VECTOR
 		void set_ang();
 		void set_x();
 		void set_y();
+		double magreturn();
+		double angreturn();
 	public:
 		Vector();
 		Vector(double n1, double n2, Mode form = RECT);
@@ -26,8 +26,8 @@ namespace VECTOR
 
 		double xval() const { return x; }
 		double yval() const { return y; }
-		double magval() const { return mag; }
-		double angval() const { return ang; }
+		double magval() { return magreturn(); }
+		double angval() { return angreturn(); }
 
 		void polar_mode();
 		void rect_mode();
